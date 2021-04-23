@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Flight</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Date</th>
+            <th scope="col">Ticket Price</th>
+            <th scope="col">Select</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        
+        <tr bgcolor="#F5F5F5">
+            <td>StarkAirlines</td>
+            <td>USA</td>
+            <td>UK</td>
+            <td>2021-04-22</td>
+            <td>24789</td>
+            <td>
+                <form action="/booking-details.jsp" method="post">
+                    <input type="hidden" id="name" name="name" value="StarkAirlines">
+                    <input type="hidden" id="ticket_price" name="ticket_price" value="24789">
+                    <input type="hidden" id="flight_id" name="flight_id" value="110">
+                    <input type="submit" class="btn btn-success" value="Book This Flight">
+                </form>
+            </td>
+        </tr>
+        
+        <tr bgcolor="#F5F5F5">
+            <td>USAir</td>
+            <td>USA</td>
+            <td>UK</td>
+            <td>2021-04-22</td>
+            <td>12412</td>
+            <td>
+                <form action="/booking-details.jsp" method="post">
+                    <input type="hidden" id="name" name="name" value="USAir">
+                    <input type="hidden" id="ticket_price" name="ticket_price" value="12412">
+                    <input type="hidden" id="flight_id" name="flight_id" value="115">
+                    <input type="submit" class="btn btn-success" value="Book This Flight">
+                </form>
+            </td>
+        </tr>
+        
+        </tbody>
+    </table>
+</body>
+</html>
