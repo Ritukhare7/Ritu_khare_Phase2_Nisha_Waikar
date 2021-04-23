@@ -2,6 +2,7 @@ package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,7 @@ public class Operate extends HttpServlet {
 	static String destination;
 	static int numberOfPeople;
 	static int price;
+	static String date;
 	
     public Operate() {
         super();
@@ -24,30 +26,22 @@ public class Operate extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	
-// Get the details of flight based on source and destination
-// How - run a select query where source and destination is like select * from flights where source = source, destination = dest
-// Print this value in the html page that opens next
-// Now, if user clicks book then the ticket should be booked	
+			
 		//response.sendRedirect("PersonDetails.html");
-		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		PrintWriter printWriter = response.getWriter();
-		//printWriter.print("Boom");
-
 		
 		source = request.getParameter("Source");
 				
 		 destination = request.getParameter("Destination");
 		 numberOfPeople = Integer.parseInt(request.getParameter("Countperson"));
+		  date = request.getParameter("traveldate");
 		 printWriter.print("<html>");
-		printWriter.print("You are travelling  from " + " " + source + " " + "to" + " " +  destination  + " " + "and number of passengers is "+ numberOfPeople + "<br>");
+		printWriter.print("You are travelling  from " + " " + source + " " + "to" + " " +  destination  + " " +"On"+ " "+ date + "and number of passengers is "+ numberOfPeople + "<br>");
 		
 		Myclient myclient = new Myclient(source, destination);
 		 price = myclient.getTicketPrice()*numberOfPeople;
@@ -77,6 +71,9 @@ public class Operate extends HttpServlet {
 	}
 	public static int getPrice(){
 		return price;
+	}
+	public static String getDate() {
+		return date;
 	}
 	
 }

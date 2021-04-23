@@ -42,7 +42,7 @@ public class FinalBooking extends HttpServlet {
 		out.println("Passenger Name" + " " + name + "<br> " + "Email : " + " " + mail + "<br>" + "Phone Number" + " " + phoneNo + "<br>");
 		
 		out.print("<h2>Ticket Summary</h2>");
-		out.println("<h4>"+ Operate.getSource() + "</h4>" + "<h5>To</h5>" + "<h4>"+ Operate.getdestination() + "</h4>" + "<br>");
+		out.println("<h4>"+ Operate.getSource() + "</h4>" + "<h5>To</h5>" + "<h4>"+ Operate.getdestination() + "</h4>" +"<h5>On</h5>" + Operate.getDate() + "<br>");
 		//out.println(Operate.getdestination());
 		
 		out.println("Number of travellers " + " " + Operate.getNoOfPerson());
